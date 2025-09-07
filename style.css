@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epunda Slab', serif;
+  padding: 20px;
+  font-weight: 300;
+  background-color: #27ae60;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  @media (min-width: 768px) {
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f1c40f;
+}
+.container {
+  text-align: center;
+  padding-inline: 40px;
+  padding-block: 60px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.first-cards-container {
+  box-shadow: 0 -5px 5px -2px rgba(0, 0, 0, 0.4),
+    5px 0px 5px -2px rgba(0, 0, 0, 0.4), -5px 0px 5px -2px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid black;
+}
+.second-cards-container {
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.4),
+    5px 0px 5px -2px rgba(0, 0, 0, 0.4), -5px 0px 5px -2px rgba(0, 0, 0, 0.4);
+}
+
+.player {
+  font-weight: 300;
+}
+
+.score {
+  font-size: 36px;
+  color: #e74c3c;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* лёгкая тень */
+}
+
+.current-score-container {
+  background: linear-gradient(#c0392b, #a93226);
+  width: 70px;
+  margin: 10px auto 0px;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.dice {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  border: 2px solid black;
+}
+
+.current-score {
+  font-size: 20px;
+  color: white;
+}
+
+/* buttons style */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: #27ae60;
+  color: white;
+  width: 80px;
+  transition: all 0.5s ease-in-out;
+}
+.btn:hover {
+  width: 90px;
+
+  background-color: #1e8449;
+}
+.roll {
+  position: absolute;
+  top: 54%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+.bank {
+  position: absolute;
+  top: 54%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.reset {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
