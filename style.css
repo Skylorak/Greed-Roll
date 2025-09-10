@@ -77,6 +77,7 @@ h5 {
   background-color: var(--current-player);
   border: 2px solid var(--border-glowing);
   box-shadow: 0 0 10px var(--border-glowing);
+  transition: all 0.5s ease-in;
 }
 
 .box {
@@ -115,4 +116,10 @@ h5 {
 /* hidden */
 .hidden {
   display: none;
+}
+/* winner style */
+
+.winner-text {
+  color: gold;
+  text-shadow: 0 0 20px gold;
 }
