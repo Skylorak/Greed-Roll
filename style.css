@@ -1,8 +1,9 @@
 :root {
   --grayscale-color: #fafafa;
-  --backroungd-color: #c0c0c09d;
-
+  --backround-color: #c0c0c09d;
+  --current-player: #c0c0c0e2;
   --gray-blue-color: #2b323f;
+  --border-glowing: #d4d3d3;
 }
 
 * {
@@ -48,29 +49,39 @@ h5 {
   color: var(--grayscale-color);
   border-radius: 20px;
 }
-
+.btn:active {
+  transform: translateY(2px);
+}
 .reset {
   top: 30%;
 }
 .roll {
   bottom: 36%;
 }
+
 .bank {
-  bottom: 30%;
+  bottom: 28%;
 }
 
 /* players box style */
-.first-player-box {
+.player--0-box {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.second-player-box {
+.player--1-box {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+
+.player--active {
+  background-color: var(--current-player);
+  border: 2px solid var(--border-glowing);
+  box-shadow: 0 0 10px var(--border-glowing);
+}
+
 .box {
+  background-color: var(--current-player);
   padding: 120px;
-  background-color: var(--backroungd-color);
 }
 
 .summary-score {
@@ -95,6 +106,13 @@ h5 {
 /* dice */
 .dice {
   position: absolute;
-  width: 80px;
+  top: 40%;
+  width: 90px;
   border: 3px solid black;
+  box-shadow: 0 0 20px 2px #2b323f;
+}
+
+/* hidden */
+.hidden {
+  display: none;
 }

@@ -16,30 +16,30 @@
   </head>
   <body>
     <main>
-      <section class="first-player-box box">
+      <section class="box player--0-box player--active">
         <h2>PLAYER 1</h2>
-        <p class="summary-score">0</p>
+        <p class="summary-score" id="sum-score--0">6</p>
 
         <div class="current-score-container">
           <h5>Current</h5>
-          <p class="current-score">0</p>
+          <p class="current-score" id="cur-score--0">0</p>
         </div>
       </section>
 
-      <section class="second-player-box box">
+      <section class="box player--1-box">
         <h2>PLAYER 2</h2>
-        <p class="summary-score">0</p>
+        <p class="summary-score" id="sum-score--1">9</p>
 
         <div class="current-score-container">
           <h5>Current</h5>
-          <p class="current-score">0</p>
+          <p class="current-score" id="cur-score--1">0</p>
         </div>
       </section>
 
-      <img src="./dice/dice_3.png" alt="dice" class="dice" />
+      <img src="./dice/dice-3.png" alt="dice" class="dice" />
 
       <button class="roll btn">ROLL DICE</button>
-      <button class="bank btn">HOLD</button>
+      <button class="bank btn">BANK</button>
       <button class="reset btn">NEW GAME</button>
     </main>
     <script src="./script.js"></script>
