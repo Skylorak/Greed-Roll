@@ -70,7 +70,7 @@ btnBank.addEventListener('click', () => {
     document.getElementById(`sum-score--${activePlayer}`).textContent =
       scores[activePlayer];
     /* Check if player's score is >= 100 */
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 100) {
       /* Finish the game */
       playing = false;
       document
