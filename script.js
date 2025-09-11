@@ -19,15 +19,30 @@ const btnBank = document.querySelector('.bank');
 const btnReset = document.querySelector('.reset');
 
 /* Starting conditions */
-sumScore0El.textContent = 0;
-sumScore1El.textContent = 0;
-diceEl.classList.add('hidden');
+let scores, currentScore, activePlayer, playing;
+const init = () => {
+  /* init logic */
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
+  playing = true;
 
-let playing = true;
+  /* visual stuff */
+  playerBox0El.classList.remove('player-win');
+  playerBox1El.classList.remove('player-win');
+  playerBox0El.classList.add('player--active');
+  document.querySelector(`.player-0`).classList.remove('winner-text');
+  document.querySelector(`.player-1`).classList.remove('winner-text');
+  diceEl.classList.add('hidden');
+
+  /* initial el scores */
+  sumScore0El.textContent = 0;
+  sumScore1El.textContent = 0;
+  curScore0El.textContent = 0;
+  curScore1El.textContent = 0;
+};
+init();
 
 const switchPlayer = () => {
   document.getElementById(`cur-score--${activePlayer}`).textContent = 0;
@@ -79,7 +94,9 @@ btnBank.addEventListener('click', () => {
       document
         .querySelector(`.player--${activePlayer}-box`)
         .classList.remove('player--active');
-
+      document
+        .querySelector(`.player--${activePlayer}-box`)
+        .classList.add('player-win');
       diceEl.classList.add('hidden');
     } else {
       /* Switch to the next player */
@@ -87,3 +104,6 @@ btnBank.addEventListener('click', () => {
     }
   }
 });
+
+/*  Reset logic */
+btnReset.addEventListener('click', init);

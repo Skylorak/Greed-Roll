@@ -1,9 +1,10 @@
 :root {
   --grayscale-color: #fafafa;
-  --backround-color: #c0c0c09d;
-  --current-player: #c0c0c0e2;
+  --backround-color: #adacac9d;
+  --current-player: #c0c0c0d2;
   --gray-blue-color: #2b323f;
   --border-glowing: #d4d3d3;
+  --winner-glowing: rgb(237, 215, 94);
 }
 
 * {
@@ -73,16 +74,15 @@ h5 {
   border-bottom-right-radius: 15px;
 }
 
+.box {
+  background-color: var(--backround-color);
+  padding: 120px;
+}
 .player--active {
   background-color: var(--current-player);
   border: 2px solid var(--border-glowing);
   box-shadow: 0 0 10px var(--border-glowing);
   transition: all 0.5s ease-in;
-}
-
-.box {
-  background-color: var(--current-player);
-  padding: 120px;
 }
 
 .summary-score {
@@ -122,4 +122,12 @@ h5 {
 .winner-text {
   color: gold;
   text-shadow: 0 0 20px gold;
+}
+
+.player-win {
+  background-color: var(--current-player);
+
+  border: 2px solid gold;
+  box-shadow: 0 0 16px gold;
+  transition: all 0.5s ease-in;
 }
