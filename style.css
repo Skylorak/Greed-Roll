@@ -1,30 +1,27 @@
 :root {
   --grayscale-color: #fafafa;
-  --backround-color: #adacac9d;
+  --background-color: #adacac9d;
   --current-player: #c0c0c0d2;
   --gray-blue-color: #2b323f;
   --border-glowing: #d4d3d3;
   --winner-glowing: rgb(237, 215, 94);
 }
 
-* {
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   font-family: 'Epunda Slab', serif;
   background-color: var(--gray-blue-color);
   color: var(--grayscale-color);
-}
-
-main {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
 h2 {
@@ -35,15 +32,24 @@ h2 {
 h5 {
   margin-bottom: 10px;
 }
+li {
+  font-size: 16px;
+}
 
+.game-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 /* btn styles */
 .btn {
-  position: absolute;
   width: 7rem;
   border-radius: 14px;
   padding: 10px;
   border: none;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .btn:hover {
   background-color: var(--gray-blue-color);
@@ -53,17 +59,39 @@ h5 {
 .btn:active {
   transform: translateY(2px);
 }
-.reset {
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--grayscale-color);
+}
+.top-btn {
+  position: absolute;
   top: 30%;
 }
-.roll {
-  bottom: 36%;
+.bottom-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  bottom: 30%;
 }
+.info {
+  font-size: 24px;
 
-.bank {
-  bottom: 28%;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background-color: inherit;
+  color: white;
+  transition: color 0.5s ease;
 }
-
+.info:hover {
+  color: rgb(196, 196, 196);
+}
+.info:focus {
+  outline: none;
+  text-shadow: 0 0 10px var(--grayscale-color);
+}
 /* players box style */
 .player--0-box {
   border-top-left-radius: 15px;
@@ -75,7 +103,7 @@ h5 {
 }
 
 .box {
-  background-color: var(--backround-color);
+  background-color: var(--background-color);
   padding: 120px;
 }
 .player--active {
@@ -130,4 +158,62 @@ h5 {
   border: 2px solid gold;
   box-shadow: 0 0 16px gold;
   transition: all 0.5s ease-in;
+}
+/* modal styles */
+.modal {
+  position: absolute;
+
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  padding: 60px 40px;
+  z-index: 2;
+  border-radius: 8px;
+  overflow-y: auto;
+  background-color: white;
+  color: var(--gray-blue-color);
+}
+
+.close-modal {
+  position: absolute;
+  top: 4%;
+  left: 90%;
+  font-size: 20px;
+  background-color: inherit;
+  border: none;
+}
+.close-modal:hover {
+  color: #4e6185;
+  transform: translateY(1px);
+}
+.overlay {
+  position: fixed;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: black;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.tip {
+  text-align: center;
+  font-size: 12px;
+  margin-block: 8px;
+
+  color: gray;
+}
+.important-text {
+  color: red;
+}
+.modal-win-text {
+  color: gold;
+}
+.glow-text {
+  text-shadow: 0 0 8px gold;
 }

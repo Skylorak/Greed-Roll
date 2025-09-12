@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
@@ -16,6 +14,7 @@
   </head>
   <body>
     <main>
+			<div class="game-container">
       <section class="box player--0-box player--active">
         <h2 class="player-0">PLAYER 1</h2>
         <p class="summary-score" id="sum-score--0">6</p>
@@ -37,10 +36,33 @@
       </section>
 
       <img src="./dice/dice-3.png" alt="dice" class="dice" />
-
-      <button class="roll btn">ROLL DICE</button>
+      <button class="info">&#9432;</button>
+			
+      <button class="reset btn top-btn">NEW GAME</button>
+			<div class="bottom-controls">      
+			<button class="roll btn">ROLL DICE</button>
       <button class="bank btn">BANK</button>
-      <button class="reset btn">NEW GAME</button>
+		</div>
+
+
+    <div class="hidden modal">
+			<button class="close-modal">&#10006</button>
+			<h2 class="modal-title">How to Play Greed Roll</h2>
+			<p class="tip">You can play by yourself or with friends.</p>
+			<ol>
+			<li>This game is designed for 2 players. Each player’s goal is to be the first to reach 100 points.</li>
+			<li>You may ask: “How do you win?” — The answer: score 100 points before your opponent.</li>
+			<li>Your next question might be: “Where can I see my points?” Below Player 1 and Player 2, you start with a value of 0. That’s your score counter.</li>
+			<li>Under your score, you’ll see Current with a value of 0. This shows the points you’ve earned in the current turn, which you can choose to roll again or bank.</li>
+			<li>In the middle of the screen, you’ll find three buttons: New Game, Roll Dice, and Bank.</li>
+			<li>Press New Game to restart the game from the beginning.</li>
+			<li>Press Roll Dice to roll the die and earn points from 2 to 6. As you keep rolling, your current score increases. Use this strategy to reach 100 points.</li>
+			<li>If you don’t want to risk losing your current points, press Bank. Your current points will be added to your total score under Player 1 or Player 2 (depending on whose turn it is). After banking, the game automatically switches to the next player.</li>
+			<li><span class="important-text">⚠️Important!</span> If you roll a 1, you lose all the points from your current turn, and it immediately becomes your opponent’s turn.</li>
+			<li>If you win, your player’s name will turn <span class="modal-win-text">gold</span> and your side will <span class="glow-text">glow</span>.</li>
+		</ol>
+		</div>
+		<div class="overlay hidden"></div></div>
     </main>
     <script src="./script.js"></script>
   </body>

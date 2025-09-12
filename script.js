@@ -18,6 +18,18 @@ const btnRoll = document.querySelector('.roll');
 const btnBank = document.querySelector('.bank');
 const btnReset = document.querySelector('.reset');
 
+/* modal*/
+const modal = document.querySelector('.modal');
+const btnInfoOpen = document.querySelector('.info');
+const btnCloseModal = document.querySelector('.close-modal');
+
+const overlay = document.querySelector('.overlay');
+
+const closeModal = () => {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
 /* Starting conditions */
 let scores, currentScore, activePlayer, playing;
 const init = () => {
@@ -51,6 +63,7 @@ const switchPlayer = () => {
   playerBox0El.classList.toggle('player--active');
   playerBox1El.classList.toggle('player--active');
 };
+
 /* Rolling dice functionality */
 btnRoll.addEventListener('click', () => {
   if (playing) {
@@ -60,6 +73,7 @@ btnRoll.addEventListener('click', () => {
     /* Display dice */
     diceEl.classList.remove('hidden');
     diceEl.src = `./dice/dice-${dice}.png`;
+    diceEl.alt = `Dice showing ${dice}`;
 
     /* Check for rolled 1 */
     if (dice !== 1) {
@@ -107,3 +121,24 @@ btnBank.addEventListener('click', () => {
 
 /*  Reset logic */
 btnReset.addEventListener('click', init);
+
+/* Modal-info logic */
+btnInfoOpen.addEventListener('click', () => {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+});
+
+/* close modal logic */
+btnCloseModal.addEventListener('click', () => {
+  closeModal();
+});
+
+overlay.addEventListener('click', () => {
+  closeModal();
+});
+
+document.querySelector('body').addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
