@@ -16,4 +16,4 @@ The first player to reach 100 points wins the game.
 
 <img width="1917" height="906" alt="image" src="https://github.com/user-attachments/assets/6dfddd65-4a08-4d39-ad4a-4383cdb1b2a2" />
 
-Created by Artem, inspired by Jonas Schmedtmann
+> Created by Artem, inspired by Jonas Schmedtmann
